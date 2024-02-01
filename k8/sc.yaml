@@ -1,0 +1,8 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: mongo
+provisioner: k8s.io/minikube-hostpath
+reclaimPolicy: Retain # when PVC is deleted, pv remains but not yet available for claim
+allowVolumeExpansion: true
+volumeBindingMode: Immediate

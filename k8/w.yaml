@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: writer
+spec:
+  containers:
+  - name: writer
+    image: ptisma/mongo-mock-writer:latest
+    env:
+    - name: MONGO_URI
+      value: mongodb://root:example_password@mongo-0.mongo:27017/
